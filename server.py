@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
+import os
 app = Flask(__name__)
 
 
@@ -6,6 +7,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+
+@app.route('/rh/<int:byte_size>')
+def gen_randomHash(byte_size):
+    print(os.urandom(byte_size))
+    return redirect('/')
 
 @app.route('/result', methods=['POST'])
 def create_user():
