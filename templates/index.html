@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dojo Survey</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrap" class="border rounded m-lg-5 p-3 shadow p-3 mb-5 rounded">
+            <form class="p-4" action='/result' method='POST'>
+                
+                <div class="form-group row pb-2">
+                    <label class="col-form-label col-form-label-lg col-sm-4 control-label">Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" aria-label="First name" class=" form-control form-control-lg" name="first_name" placeholder="First Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" aria-label="Last name" class=" form-control form-control-lg" name="last_name" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="form-group row pb-2">
+                    <label for="location" class="col-sm-4 col-form-label col-form-label-lg control-label">Dojo Location:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-lg" id="location" name="location">
+                            <option value= "False" selected hidden>Please choose...</option>
+                            <option>Arlington</option>
+                            <option>Bellevue</option>
+                            <option>Boise</option>
+                            <option>Chicago</option>
+                            <option>Dallas</option>
+                            <option>Los Angeles</option>
+                            <option>Oakland</option>
+                            <option>Orange County</option>
+                            <option>Jan Jose - Silicon Valley</option>
+                            <option>Tulsa</option>
+                            <option>Online</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-2">
+                    <label class="col-sm-4 col-form-label col-form-label-lg">Favorite Language:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-lg" name="fav_lang">
+                            <option value= "False" selected hidden>Please choose...</option>
+                            <option>Python</option>
+                            <option>Java</option>
+                            <option>C#</option>
+                            <option>JavaScript</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-2">
+                    <label class="col-sm-4 col-form-label col-form-label-lg">Comments (optional):</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control form-control-lg" name='comments' rows="4"></textarea>
+                    </div>
+                </div>
+
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-4 pt-0 col-form-label-lg">Interested in:</legend>
+                        <div class="col-sm-8">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="other" name="other">
+                                <label class="form-check-label control-label checkbox-inline form-control-lg" for="other">Other Programs</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="news" name="newsletter">
+                                <label class="form-check-label form-control-lg" for="news">Newsletter</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="notif" name="notifications">
+                                <label class="form-check-label form-control-lg" for="notif">Notifications</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-group row">
+                    <div class="col-sm-4 col-form-label-lg">How did you hear about us?</div>
+                    <div class="col-sm-8">
+                        <input class="form-check-input align-middle" type="radio" id="ref_web" name="ref" value="web">
+                        <label class="form-check-label align-middle col-form-label-lg" for="ref_web">Web</label>
+                        <input class="form-check-input align-middle" type="radio" id="ref_friend" name="ref" value="friend">
+                        <label class="form-check-label align-middle col-form-label-lg" for="ref_friend">Friend</label>
+                        <input class="form-check-input align-middle" type="radio" id="ref_stream" name="ref" value="stream">
+                        <label class="form-check-label align-middle col-form-label-lg" for="ref_stream">Streaming Platform</label>
+                        <input class="form-check-input align-middle" type="radio" id="ref_print" name="ref" value="print">
+                        <label class="form-check-label align-middle col-form-label-lg" for="ref_print">Print</label>
+
+                    </div>
+                </div>
+
+                <div class="form-group row pt-4">
+                    <div class="col-sm-3 offset-sm-5">
+                        <input class="btn-lg btn-primary form-control" type='submit' value='Submit Survey'>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.js')}}"></script>
+    </body>
+</html>
