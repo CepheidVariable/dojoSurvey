@@ -8,8 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+#this is for testing purposes
 @app.route('/rh/<int:byte_size>')
 def gen_randomHash(byte_size):
+    print("Remove this after testing. Don't expose your secret key!")
     print(os.urandom(byte_size))
     return redirect('/')
 
@@ -19,7 +21,7 @@ def create_user():
     print(request.form)
     first_name_from_form= request.form['first_name']
     last_name_from_form= request.form['last_name']
-    location_from_form= request.form.get('location', False)
+    location_from_form= request.form['location']
     fav_lang_from_form= request.form['fav_lang']
     comments_from_form= request.form['comments']
     ref_from_form= request.form.get('ref', False)
