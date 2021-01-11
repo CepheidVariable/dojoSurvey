@@ -1,8 +1,8 @@
 <h1>Submitted Info</h1>
-<p>First Name: {{ first_name_on_template }}</p>
-<p>Last Name: {{ last_name_on_template }}</p>
-<p>Location: {{ location_on_template }}</p>
-<p>Favorite Language: {{ fav_lang_on_template }}</p>
-<p>Comments: {{ comments_on_template }}</p>
-<p>Communication Options: {{ comm_opt }}</p>
-<p>Referred: {{ ref_on_template }}</p>
+<p>First Name: {{ session['first_name'] }}</p>
+<p>Last Name: {{ session['last_name'] }}</p>
+<p>Location: {{ session['location'] }}</p>
+<p>Favorite Language: {{ session['fav_lang'] }}</p>
+<p>Comments: {{ session['comments'] }}</p>
+<p>Communication Options: {{ session['comm_options'] }}</p>
+<p>Referred: {{ session['ref'] }}</p>
